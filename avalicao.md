@@ -11,7 +11,7 @@
 
 # Limitações
 
-* O programa ainda não roda, há vários pequenos erros no código que vão ser resolvidos até a entrega final
+* O programa ainda não roda, há vários pequenos erros no código que vão ser resolvidos até a entrega final.
    
 # Autoavaliação
 

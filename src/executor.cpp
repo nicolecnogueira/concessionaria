@@ -56,10 +56,35 @@ string Executor::processarLinha(string linha) {
     this->sair = true;
     return sistema->quit();
   }
+
   else if (nomeComando == "create-concessionaria") {
     string nome;    
     nome = restoDe(buf);
     return sistema->create_concessionaria(nome);
+  }
+
+   else if (nomeComando == "add-car") {
+    string nome;    
+    nome = restoDe(buf);
+    return sistema->add_car(nome);
+  }
+
+   else if (nomeComando == "add-bike") {
+    string nome;    
+    nome = restoDe(buf);
+    return sistema->add_bike(nome);
+  }
+
+  else if (nomeComando == "add-truck") {
+    string nome;    
+    nome = restoDe(buf);
+    return sistema->add_truck(nome);
+  }
+  
+  else if (nomeComando == "remove-vehicle") {
+    string nome;    
+    nome = restoDe(buf);
+    return sistema->remove_vehicle(nome);
   }
 
   return "Erro";	

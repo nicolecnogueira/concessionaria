@@ -11,40 +11,47 @@
 * O primeiro passo é compilar o programa com o comando "make" no terminal e , então, executar o comando "./build/programa", também no terminal.
 * A partir daí, é possível utilizar os seguintes comandos:
 * Para criar uma concessionária:
-*          $ create-concessionaria <nome-concessionaria> <CNPJ> <estoque>
-  exemplo: $ create-concessionaria IMD_SA 11.111.111/0001-11 0
+*      $ create-concessionaria <nome-concessionaria> <CNPJ> <estoque>
+*  exemplo:
+*      $ create-concessionaria IMD_SA 11.111.111/0001-11 0
 * Para adicionar um carro:
-  $ add-car <nome-concessionaria> <marca> <preço> <chassi> <ano_de_fabricação> <tipo_de_motor>
-$ add-car IMD_SA Toyota 100000 9BRBLWHEXG0107721 2019 gasolina
+*      $ add-car <nome-concessionaria> <marca> <chassi> <preço> <ano_de_fabricação> <tipo_de_motor>
+*  exemplo:
+*      $ add-car IMD_SA Toyota 9BRBLWHEXG0107721 100000 2019 gasolina
 * Para adicionar um caminhão:
-  $ add-truck <nome-concessionaria> <marca> <preço> <chassi> <ano_de_fabricação> <tipo_de_carga>
-$ add-truck IMD_SA Scania 700000 7BRBLQHEXG0208811 2010 perigosa
+*      $ add-truck <nome-concessionaria> <marca> <chassi> <preço> <ano_de_fabricação> <tipo_de_carga>
+*  exemplo:
+*      $ add-truck IMD_SA Scania 7BRBLQHEXG0208811 700000 2010 perigosa
 * Para adicionar uma moto:
-  $ add-bike <nome-concessionaria> <marca> <preço> <chassi> <ano_de_fabricação> <modelo>
-$ add-bike IMD_SA Honda 50000 9BRBLQHEXH4208811 2012 esportiva
+*      $ add-bike <nome-concessionaria> <marca> <chassi> <preço> <ano_de_fabricação> <modelo>
+*  exemplo:
+*      $ add-bike IMD_SA Honda 9BRBLQHEXH4208811 50000 2012 esportiva
 * Para remover um veículo:
-  $ remove-vehicle <chassi>
-$ remove-vehicle 7BRBLQHEXG0208811
+*      $ remove-vehicle <chassi>
+*  exemplo:
+*      $ remove-vehicle 7BRBLQHEXG0208811
 * Para pesquisar um veículo:
-  $ search-vehicle <chassi>
-$ search-vehicle 7BRBLQHEXG0208811
+*      $ search-vehicle <chassi>
+*  exemplo:
+*      $ search-vehicle 7BRBLQHEXG0208811
 * Para retornar a frota de uma concessionária:
-  $ list-concessionaria <nome-concessionaria>
-$ list-concessionaria IMD_SA
+*      $ list-concessionaria <nome-concessionaria>
+*  exemplo:
+*      $ list-concessionaria IMD_SA
 * Para salvar os dados de uma concessionária em um arquivo .txt:
-  $ save-concessionaria <nome-arquivo.txt>
-$ save-concessionaria IMD_SA.txt
+*      $ save-concessionaria <nome-arquivo.txt>
+*  exemplo:
+*      $ save-concessionaria IMD_SA.txt
 * Para retornar os dados salvos em um arquivo .txt:
-  $ load-concessionaria <nome-arquivo.txt>
-  exemplo: $ load-concessionaria IMD_SA.txt
+*      $ load-concessionaria <nome-arquivo.txt>
+*  exemplo:
+*      $ load-concessionaria IMD_SA.txt
 * Para parar a execução do programa:
-  $ quit
+*      $ quit
 
 # Limitações
 
-* Apesar de todas as funcões terem sido implementadas, os comandos "search-vehicle" e "remove-vehicle" não estão gerando a saída esperada.
-* Além disso, quando executado o comando "list-concessionaria", os preços apresentados não condizem com as entradas fornecidas.
-* Por último, quando tentamos adicionar um veículo que já está cadastrado, o programa não reconhece o erro.
+* Apesar de todas as funcões terem sido implementadas, quando tentamos adicionar um veículo que já está cadastrado, o programa não reconhece o erro e adiciona o veículo mesmo assim. Assim, a concessionária fica com veículos repetidos.
    
 # Autoavaliação
 

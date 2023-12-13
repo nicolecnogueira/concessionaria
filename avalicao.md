@@ -45,6 +45,10 @@
 *      $ load-concessionaria <nome-arquivo.txt>
 *  exemplo:
 *      $ load-concessionaria IMD_SA.txt
+*  Para aumentar o preço dos veículos de uma concessionária:
+*      $ raise-price <nome da concessionária> <taxa de aumento>
+*  exemplo:
+*      $ raise-price IMD_SA 10
 * Para parar a execução do programa:
 *      $ quit
 

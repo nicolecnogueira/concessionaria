@@ -1,9 +1,9 @@
 
 # Identificação
 
-* Nome:
+* Nome: Nicole Carvalho Nogueira
 
-* Matrícula:
+* Matrícula: 20220040038
   
 # Compilação  
 
@@ -11,7 +11,7 @@
 
 # Limitações
 
-* a descrição das limitações (caso existam) do programa e quaisquer dificuldades encontradas
+* O programa ainda não roda, há vários pequenos erros no código que vão ser resolvidos até a entrega final.
    
 # Autoavaliação
 

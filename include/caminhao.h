@@ -1,15 +1,31 @@
-#indef CAMINHAO_H
+#ifndef CAMINHAO_H
 #define CAMINHAO_H
+#include "veiculo.h"
 #include <string>
+using std::string;
+#include <iostream>
+
+#include "veiculo.h"
+
+using namespace std;
 
 class Caminhao : public Veiculo{
-    private:
-    string carga;
+    protected:
+        string carga;
 
     public:
-    //construtor
-    Moto(string mar, int pre, string cha, int ano, string car);
+        //CONSTRUTOR
+        Caminhao(string carga, string chassi, string marca, int preco, int ano_de_fabricacao);
+        
+        //Atribui o tipo de carga do caminhão
+        void setCarga(string car);
 
-    void set_carga();       //recebe o tipo de carga do caminhão
-	string get_carga();     //retorna o tipo de carga do caminhão
-}
+        //Retorna o tipo de carga do caminhão
+        string getCarga();
+
+        //Imprime os dados do caminhão
+        void print_caminhao();
+};
+
+#endif
+

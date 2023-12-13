@@ -8,13 +8,15 @@
 using namespace std;
 
 int main() {
-  // inicialização do sistema
-  Sistema sistema;
-  Executor executor(sistema);
+    // inicialização do sistema
+    Sistema sistema;
+    Executor executor(sistema);
 
-  // o executor recebe o cin e o cout. Ele os utilizará para ler as linhas
-  // de comando, executar o método correto em "sistema" e exibir as mensagens
-  executor.iniciar(cin, cout);
+    // o executor recebe o cin e o cout. Ele os utilizará para ler as linhas
+    // de comando, executar o método correto em "sistema" e exibir as mensagens
+    executor.iniciar(cin, cout);
 
-  return 0;
+    sistema.print_concessionaria();
+
+    return 0;
 }

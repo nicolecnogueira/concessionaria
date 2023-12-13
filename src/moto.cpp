@@ -4,21 +4,31 @@
 #include <iostream>
 
 //CONSTRUTOR
-//recebe os dados da nova moto
-Automoveis::Automoveis(string marca, int preco, string chassi, int ano_de_fabricacao, string modelo){
-    set_marca(marca);
-    set_preco(preco);
-    set_chassi(chassi);
-    set_ano_de_fabricacao(ano_de_fabricacao);
-    set_modelo(modelo);
+//Recebeos dados da nova moto
+Moto::Moto(string modelo, string chassi, string marca, int preco, int ano_de_fabricacao){
+    setModelo(modelo);
+    setChassi(chassi);
+    setMarca(marca);
+    setPreco(preco);
+    setAno_de_fabricacao(ano_de_fabricacao);
 }
 
-//retorna o tipo de modelo
-string Carro::get_modelo(){
+//Atribui o modelo da moto
+void Moto::setModelo(string mod){
+    modelo = mod;
+}
+
+//Retorna o modelo da moto
+string Moto::getModelo(){
     return modelo;
 }
 
-//altera o tipo de modelo
-void Moto::set_modelo(string mod){
-    modelo = mod;
+//Imprime dos dados da moto
+void Moto::print_Moto(){
+    cout << endl;
+    cout << "MODELO: " << getModelo() << endl;
+    cout << "MARCA: " << get_marca() << endl;
+    cout << "PRECO: " << get_preco() << endl;
+    cout << "CHASSI: " << get_chassi() << endl;
+    cout << "ANO DE FABRICACAO: " << get_ano_de_fabricacao() << endl;
 }

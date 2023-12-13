@@ -1,15 +1,27 @@
-#indef MOTO_H
+#ifndef MOTO_H
 #define MOTO_H
-#include <string>
+#include <iostream>
+
+#include "veiculo.h"
+
+using namespace std;
 
 class Moto : public Veiculo{
-    private:
-    string modelo;
+    protected:
+        string modelo;
 
     public:
-    //construtor
-    Moto(string mar, int pre, string cha, int ano, string mod);
+        //CONSTRUTOR
+        Moto(string modelo, string chassi, string marca, int preco, int ano_de_fabricacao);
 
-    void set_modelo();          //recebe o modelo da moto
-	string get_modelo();        //retorna o modelo da moto
-}
+        //Atribui o modelo da moto
+        void setModelo(string mod);
+
+        //Retorna o modelo da moto
+        string getModelo();
+
+        //Imprime os dados da moto
+        void print_Moto();
+};
+
+#endif

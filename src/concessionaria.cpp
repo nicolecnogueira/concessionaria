@@ -7,79 +7,79 @@
 using std::string;
 
 //CONSTRUTOR
-//recebe os dados da concessionaria
 Concessionaria::Concessionaria(string nom, string cnpj, int est){
-    set_nome(nom);
-    set_cnpj(cnpj);
-    set_estoque(est);
+    setNome(nom);
+    setCnpj(cnpj);
+    setEstoque(est);
 }
 
-//retorna o vetor de carros
-vector<Carro> &Concessionaria::get_carro(){
-    return Vcarro;
-}
+//Atribui o nome da concessionaria
+void Concessionaria::setNome(string nom){
 
-//retorna o vetor de motos
-vector<Moto> &Concessionaria::get_moto(){
-    return Vmoto;
-}
-
-//retorna o vetor de caminhões
-vector<Caminhao> &Concessionaria::get_caminhao(){
-    return Vcaminhao;
-}
-
-//adiciona um novo carro ao vetor
-void Concessionaria::set_carro(Carro carro){
-    Vcarro.push_back(carro);
-}   
-
-//adiciona uma nova moto ao vetor
-void Concessionaria::set_moto(Moto moto){
-    Vmoto.push_back(moto);
-} 
-
-//adiciona um novo caminhão ao vetor
-void Concessionaria::set_caminhao(Caminhao caminhao){
-    Vcaminhao.push_back(caminhao);
-}   
-
-//retorna o nome da concessionaria
-string Concessionaria::get_nome(){
-    return nome;
-}
-
-//retorna o cnpj da concessionaria
-string Concessionaria::get_CNPJ(){
-    return CNPJ;
-}
-
-//retorna a quantidade de veiculos no estoque
-int Concessionaria::get_estoque(){
-    return estoque;
-}
-
-//altera o nome da concessionaria
-void Concessionaria::set_nome(string nom){
     nome = nom;
 }
 
-//altera o cnpj da concessionaria
-void Concessionaria::set_CNPJ(string cnpj){
+//Retorna o nome da concessionaria
+string Concessionaria::getNome(){
+    return nome;
+}
+
+//Atribui o CNPJ da concessionaria
+void Concessionaria::setCnpj(string cnpj){
     CNPJ = cnpj;
 }
 
-//altera o número de veiculos no estoque
-void Concessionaria::set_estoque(int est){
+//Retorna o CNPJ da concessionaria
+string Concessionaria::getCnpj(){
+    return CNPJ;
+}
+
+//Atribui a quantidade de veiculos no estoque da concessionária
+void Concessionaria::setEstoque(int est){
     estoque = est;
 }
 
-//recebe um chassi e retorna posição do vetor onde está o carro associado a tal chassi
-int Concessionaria::index_carro(string chassi){
-    auto it = find_if(get_carro().begin(), get_carro().end(), [&chassi] (Carro &carro) {return carro.get_chassi() == chassi;});
+//Retorna a quantidade de veiculos no estoque da concessionária
+int Concessionaria::getEstoque(){
+    return estoque;
+}
 
-    if (it != get_carro().end()){
-        auto index = distance(get_carro().begin(), it);
+//Adiciona um novo carro ao vetor
+void Concessionaria::setCarro(Carro carro){
+    Vcarro.push_back(carro);
+}   
+
+//Retorna o vetor carro
+vector<Carro> &Concessionaria::getCarro(){
+    return Vcarro;
+}
+
+//Adiciona um novo caminhão ao vetor
+void Concessionaria::setCaminhao(Caminhao caminhao){
+    Vcaminhao.push_back(caminhao);
+} 
+
+//Retorna o vetor caminhao
+vector<Caminhao> &Concessionaria::getCaminhao(){
+    return Vcaminhao;
+}
+
+//Adiciona uma nova moto ao vetor
+void Concessionaria::setMoto(Moto moto){
+    Vmoto.push_back(moto);
+}   
+
+//Retorna o vetor moto
+vector<Moto> &Concessionaria::getMoto(){
+    return Vmoto;
+}
+
+//Recebe um chassi e retorna o index do carro associado a ele no vetor 
+int Concessionaria::indexCar(string chassi){
+    auto it = find_if(getCarro().begin(), getCarro().end(), [&chassi] (Carro &car) {return car.get_chassi() == chassi;});
+
+    if (it != getCarro().end()){
+        auto index = distance(getCarro().begin(), it);
         return index;
     }
 
@@ -88,39 +88,40 @@ int Concessionaria::index_carro(string chassi){
     }
 }
 
-//recebe um chassi e retorna posição do vetor onde está a moto associado a tal chassi
-int Concessionaria::index_moto(string chassi){
-    auto it = find_if(get_moto().begin(), get_moto().end(), [&chassi] (Moto &moto) {return moto.get_chassi() == chassi;});
-
-    if (it != get_moto().end()){
-        auto index = distance(get_moto().begin(), it);
-        return index;
-    }
-
-    else{
-        return -1;
-    }  
-}
-
-//recebe um chassi e retorna posição do vetor onde está o caminhao associado a tal chassi
+//Recebe um chassi e retorna o index do caminhão associado a ele no vetor
 int Concessionaria::indexTruck(string chassi){
-    auto it = find_if(get_caminhao().begin(), get_caminhao().end(), [&chassi] (Caminhao &caminhao) {return caminhao.get_chassi() == chassi;});
+    auto it = find_if(getCaminhao().begin(), getCaminhao().end(), [&chassi] (Caminhao &truck) {return truck.get_chassi() == chassi;});
 
-    if (it != get_caminhao().end()){
-        auto index = distance(get_caminhao().begin(), it);
+    if (it != getCaminhao().end()){
+        auto index = distance(getCaminhao().begin(), it);
         return index;
     }
 
     else{
         return -1;
     }
+
 }
 
-//recebe um chassi e retorna verdadeiro, se o veículo pertencer a concessionária, ou falso, se não pertencer
-bool Concessionaria::search_vehicle(string chassi)
-{
+//Recebe um chassi e retorna o index da moto associada a ele no vetor
+int Concessionaria::indexMoto(string chassi){
+    auto it = find_if(getMoto().begin(), getMoto().end(), [&chassi] (Moto &moto) {return moto.get_chassi() == chassi;});
+
+    if (it != getMoto().end()){
+        auto index = distance(getMoto().begin(), it);
+        return index;
+    }
+
+    else{
+        return -1;
+    }
+
+}
+
+//Recebe um chassi e retorna verdadeiro se estiver em algum vetor ou falso se não estiver
+bool Concessionaria::search_vehicle(string chassi){
     if(indexCar(chassi) != -1){
-        getAutomoveis().at(indexCar(chassi)).print_carro();
+        getCarro().at(indexCar(chassi)).print_carro();
         return true;
     }
 
@@ -137,17 +138,19 @@ bool Concessionaria::search_vehicle(string chassi)
     return false;
 }
 
-//recebe um chassi e remove o veículo associado a ele
-void Concessionaria::remover_veiculo(string chassi){
-    if(index_carro(chassi) != -1){
-        get_carro().erase(get_carro().begin() + index_carro(chassi));
+//Recebe o chassi do veiculo que será removido e retorna verdadeiro se for removido ou falso de não for
+bool Concessionaria::remove_vehicle(string chassi){
+    if(indexCar(chassi) != -1){
+        getCarro().erase(getCarro().begin() + indexCar(chassi));
     }
 
-    else if (index_moto(chassi) != -1){
-        get_moto().erase(get_moto().begin() + index_moto(chassi));
+    else if (indexTruck(chassi) != -1){
+        getCaminhao().erase(getCaminhao().begin() + indexTruck(chassi));
     }
 
-    else if (index_caminhao(chassi) != -1){
-        get_caminhao().erase(get_caminhao().begin() + index_caminhao(chassi));
+    else if (indexMoto(chassi) != -1){
+        getMoto().erase(getMoto().begin() + indexMoto(chassi));
     }
+
+    return false;  
 }

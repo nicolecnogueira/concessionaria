@@ -3,37 +3,63 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <istream>
 #include "concessionaria.h"
+#include <sstream>
+#include <algorithm>
+#include <fstream>
 
+using namespace std;
 
-// Sistema deve concentrar todas as operações
 class Sistema {
   private:
-		std::vector<Concessionaria> concessionarias; //um vetor com todos as concessionarias
+    vector<string> dados;
+    vector<Concessionaria> concessionarias;
+
   public:
+    //Encerra o programa
+    string quit();
 
-		/*Encerra o funcionamento do programa.
-			@return uma string com a mensagem "Saindo.."
-		*/
-		std::string quit();
+    //Adiciona ao vetor concessionária
+    void setConcessionaria(Concessionaria concessionaria);
 
-		/* Cria uma concessionaria e retorna uma string de erro/sucesso 
-			@param nome o nome da concessionaria
-			@return uma string contendo uma mensagem de erro ou "Concessionaria Criada"
-		*/
-		std::string create_concessionaria (const std::string nome);
+    //Retorna o vetor concessionária
+    vector<Concessionaria> &getConcessionaria();
 
-		//adiciona um novo carro		
-		std::string add_car(const std::string nome);
+    //Cria uma concessionária
+    string create_concessionaria (const string nome);
 
-		//adiciona uma nova moto
-		std::string add_bike(const std::string nome);
+    //Adicionam novos veículos
+    string add_car (const string nome);	
+    string add_truck (const string nome);	
+    string add_moto (const string nome);
 
-		//adiciona um novo caminhao
-		std::string add_truck(const std::string nome);
-		
-		//remove um veículo
-		std::string remove_vehicle(const std::string chassi);
+    //Pesquisa o veículo no vetor
+    string search_vehicle(const string chassi);
+
+    //Remove o veículo do vetor
+    string remove_vehicle(const string chassi);
+
+    //Imprime a frota da concessionária
+    string list_concessionaria(const string nome);
+
+    //Aumenta os preços dos veículos
+    string raise_price(const string nome);
+
+    //Cria o arquivo txt
+    string save_concessionaria(const string nome);
+    
+    //Recupera os dados do arquivo txt
+    string load_concessionaria(const string nome);
+
+    //Pesquisa a concessionária no vetor
+    int search_concessionaria(const string nome);
+
+    //Quebra a string em vetor
+    vector<string> quebra_string(string str, const char* op);
+
+    //Imprime as concessionárias
+    void print_concessionaria();
 };
 
 #endif

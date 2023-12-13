@@ -1,77 +1,78 @@
-#infdef CONCESSIONARIA_H
+#ifndef CONCESSIONARIA_H
 #define CONCESSIONARIA_H
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include "veiculo.h"
 #include "carro.h"
 #include "moto.h"
 #include "caminhao.h"
-#include <string>
 
 using namespace std;
 
 class Concessionaria{
     protected:
-    string nome;
-    string CNPJ;
-    int estoque;
-    int quant_carro = 0;
-    int quant_moto = 0;
-    int quant_caminhao = 0;
+        int estoque;
+        string nome;
+        string CNPJ;
+        double valor_carros;
+        double valor_caminhoes;
+        double valor_motos;
 
-    vector<Carro> Vcarro;
-    vector<Moto> Vmoto;
-    vector<Caminhao> Vcaminhao;
+        vector<Carro> Vcarro;
+        vector<Caminhao> Vcaminhao;
+        vector<Moto> Vmoto;
 
     public:
+        //CONSTRUTOR
+        Concessionaria(string nom, string cnpj, int est);
 
-    //construtor
-    Concessionaria(string nom, string cnpj, int est);
-    
-    void set_nome();		//recebe o nome da concessionária
-	void set_CNPJ();		//recebe o CNPJ da concessionária
-	void set_estoque();		//recebe o estoque da concessionária
+        //Atribui o nome da concessionária
+        void setNome(string nom);
 
-    string get_nome();		//retorna o nome da concessionária
-	string get_cnpj();		//retorna o CNPJ da concessionária
-	int get_estoque();		//retorna o estoque da concessionária
+        //Retorna o nome da concessionária
+        string getNome();
 
-    //vetor de carros
-    vector<Carro> &get_carro();
-    void set_carro(Carro carro);
+        //Atribui o CNPJ da concessionária
+        void setCnpj(string cnpj);
 
-    //vetor de motos
-    vector<Moto> &get_moto();
-    void set_moto(Moto moto);
+        //Retorna o CNPJ da concessionária
+        string getCnpj();
 
-    //vetor de caminhões
-    vector<Caminhao> &get_caminhao();
-    void set_caminhao(Caminhao caminhao);
+        //Atribui o estoque da concessionária
+        void setEstoque(int est);
 
-    int get_quant_caro(); 	    //retorna a quantidade de carros
-	int get_quant_moto();   	//retorna a quantidade de motos
-	int get_quant_caminhao();	//retorna a quantidade de caminhões
-		
-	void add_quant_carro();	    //adiciona 1 na quantidade de carros
-	void add_quant_moto();	    //adiciona 1 na quantidade de motos
-	void add_quant_caminhao();	//adiciona 1 na quantidade de caminhões
-		
-	void sub_quant_carro();	    //subtrai 1 na quantidade de carros
-	void sub_quant_moto();	    //subtrai 1 na quantidade de motos
-	void sub_quant_caminhao();	//subtrai 1 na quantidade de caminhões
-		
-	void soma_estoque(); 	    //soma de todos os veículos do estoque
+        //Retorna o estoque da concessionária
+        int getEstoque();
 
-    //retorna o indice do veiculo em reu respectivo vetor
-    int index_carro(string chassi);
-    int index_moto(string chassi);
-    int index_caminhao(string chassi);
+        //Adiciona ao vetor carro
+        void setCarro(Carro carro);
 
-    //pesquisa o veiculo no vetor (para saber se ele já está na concessionária)
-    bool buscar_veiculo(string chassi);
+        //Retorna o vetor carro
+        vector<Carro> &getCarro();  
 
-    //remove o veiculo
-    void remover_veiculo(string chassi);
-		
+        //Adiciona ao vetor caminhão
+        void setCaminhao(Caminhao caminhao);
 
-}
+        //Retorna o vetor caminhão
+        vector<Caminhao> &getCaminhao(); 
+
+        //Adiciona ao vetor moto
+        void setMoto(Moto moto);
+
+        //Retorna o vetor moto
+        vector<Moto> &getMoto();   
+        
+        //Retorna o índice de cada veículo
+        int indexCar(string chassi);
+        int indexTruck(string chassi);
+        int indexMoto(string chassi);
+
+        //Pesquisa veículo no vetor
+        bool search_vehicle(string chassi);
+
+        //Remove do veículo do vetor
+        bool remove_vehicle(string chassi);
+};
 
 #endif

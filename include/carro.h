@@ -1,16 +1,27 @@
-#indef CARRO_H
+#ifndef CARRO_H
 #define CARRO_H
 #include <iostream>
-#include <string>
+
+#include "veiculo.h"
+
+using namespace std;
 
 class Carro : public Veiculo{
-    private:
-    string motor;
+    protected:
+        string motor;
 
     public:
-    //construtor
-    Carro(string mar, int pre, string cha, int ano, string mot);
+        //CONSTRUTOR
+        Carro(string motor, string chassi, string marca, int preco, int ano_de_fabricacao);
 
-    void set_motor();       //recebe o tipo de motor do carro
-    string get_motor();     //retorna o tipo de motor do carro
-}
+        //Atribui o tipo de motor do carro
+        void setMotor(string mot);
+
+        //Retorna o tipo de motor do carro
+        string getMotor();
+
+        //Imprime os dados do carro
+        void print_carro();
+};
+
+#endif

@@ -4,21 +4,31 @@
 #include <iostream>
 
 //CONSTRUTOR
-//recebe os dados do novo caminhao
-Automoveis::Automoveis(string marca, int preco, string chassi, int ano_de_fabricacao, string carga){
-    set_marca(marca);
-    set_preco(preco);
-    set_chassi(chassi);
-    set_ano_de_fabricacao(ano_de_fabricacao);
-    set_carga(carga);
+//Recebe os dados do novo caminhão
+Caminhao::Caminhao(string carga, string chassi, string marca, int preco, int ano_de_fabricacao){
+    setCarga(carga);
+    setChassi(chassi);
+    setMarca(marca);
+    setPreco(preco);
+    setAno_de_fabricacao(ano_de_fabricacao);
 }
 
-//retorna o tipo de carga
-string Carro::get_carga(){
+//Atribui o tipo de carga do caminhão
+void Caminhao::setCarga(string car){
+    carga = car;
+}
+
+//Retorna tipo de carga do caminhão
+string Caminhao::getCarga(){
     return carga;
 }
 
-//altera o tipo de carga
-void Caminhao::set_carga(string car){
-    carga = car;
+//Imprime os dados do caminhão
+void Caminhao::print_caminhao() {
+    cout << endl;
+    cout << "TIPO DE CARGA: " << getCarga() << endl;
+    cout << "MARCA: " << get_marca() << endl;
+    cout << "PRECO: " << get_preco() << endl;
+    cout << "CHASSI: " << get_chassi() << endl;
+    cout << "ANO DE FABRICACAO: " << get_ano_de_fabricacao() << endl;
 }

@@ -7,7 +7,6 @@
   
 # Compilação  
 
-* a descrição de como compilar e rodar o programa, incluindo um roteiro de entradas e comandos que destaquem as funcionalidades
 * O primeiro passo é compilar o programa com o comando "make" no terminal e , então, executar o comando "./build/programa", também no terminal.
 * A partir daí, é possível utilizar os seguintes comandos:
 * Para criar uma concessionária:

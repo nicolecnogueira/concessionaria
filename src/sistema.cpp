@@ -24,7 +24,7 @@ string Sistema::create_concessionaria (const string nome) {
       return "concessionaria ja adicionada";
     }
 
-    return "create-concessionaria";
+    return "Concessionaria criada";
 }
 
 //Recebe uma string e quebra em partes de um vetor
@@ -265,7 +265,7 @@ string Sistema::save_concessionaria(const string nome){
       file << "bike:" << getConcessionaria()[i].getNome() << " " << getConcessionaria()[i].getMoto()[j].get_marca() << " " << getConcessionaria()[i].getMoto()[j].get_preco() << " " << getConcessionaria()[i].getMoto()[j].get_chassi() << " " << getConcessionaria()[i].getMoto()[j].get_ano_de_fabricacao() << " " << getConcessionaria()[i].getMoto()[j].getModelo() << "\n";
     }
 
-    return "save-concessionaria";
+    return "Arquivo criado com suceeso";
 }
 
 //Recupera os dados do arquivo txt recebido e retorna a mensagem de confirmação
@@ -298,5 +298,5 @@ string Sistema::load_concessionaria(const string nome){
       } 
 
     }
-    return "load-concessionaria";
+    return "Concessionaria criada com sucesso";
 }

@@ -7,7 +7,6 @@
   
 # Compilação  
 
-* a descrição de como compilar e rodar o programa, incluindo um roteiro de entradas e comandos que destaquem as funcionalidades
 * O primeiro passo é compilar o programa com o comando "make" no terminal e , então, executar o comando "./build/programa", também no terminal.
 * A partir daí, é possível utilizar os seguintes comandos:
 * Para criar uma concessionária:
@@ -46,6 +45,10 @@
 *      $ load-concessionaria <nome-arquivo.txt>
 *  exemplo:
 *      $ load-concessionaria IMD_SA.txt
+*  Para aumentar o preço dos veículos de uma concessionária:
+*      $ raise-price <nome da concessionária> <taxa de aumento>
+*  exemplo:
+*      $ raise-price IMD_SA 10
 * Para parar a execução do programa:
 *      $ quit
 
@@ -74,11 +77,11 @@
   - 0: não realiza o teste
   - 10: realiza o teste e indica o erro  
 
-- Implementação e uso do comando para remover veículos `remove-vehicle` | **0 / 10**
+- Implementação e uso do comando para remover veículos `remove-vehicle` | **10 / 10**
   - 0: comando não implementado
   - 10: comando implementado e funcional
 
-- Implementação e uso do comando para busca de veículos `search-vehicle` | **0 / 15 - Bônus: 0**
+- Implementação e uso do comando para busca de veículos `search-vehicle` | **15 / 15 - Bônus: 0**
   - 0: não implementado
   - 15: implementado e funcional
   - bonus +10: implementado com estratégia de busca diferente da busca exaustiva
@@ -99,7 +102,7 @@
   - 0: não implementado
   - 15: ambos os comandos implementados e funcionais
   
-- Implementação eficiente através do uso de referencias e contêineres da STL | **... / 10**
+- Implementação eficiente através do uso de referencias e contêineres da STL | **0 / 10**
   - 0: não usou contêiner da STL nem fez uso eficiente dos recursos computacionais
   - 5: usou contêiner da STL mas não otimizou uso dos recursos computacionais
   - 10: usou contêiner da STL junto a algoritmos e práticas de bom uso de recursos computacionais
@@ -112,13 +115,13 @@
   - 0: não documentou o código
   - 5: documentou o código 
   
-- Implementação e documentação de arquivos e procedimentos de compilação e teste | **... / 15**
+- Implementação e documentação de arquivos e procedimentos de compilação e teste | **15 / 15**
   - 0: não implementou arquivos e procedimentos de compilação e teste
   - 5: implementou alguns arquivos e procedimentos de compilação e teste (com alguma documentação) 
   - 15: Ampla implementação e documentação de arquivos e procedimentos de compilação e teste (com exemplos)
  
  # Total
  
- **... / 150 ** pontos (sem bônus)
+ **130 / 150 ** pontos (sem bônus)
  
- **... / 200 ** pontos (com bônus)
+ **130 / 200 ** pontos (com bônus)

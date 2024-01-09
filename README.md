@@ -1,5 +1,5 @@
 
-# Motivação
+# Programa
 
 O programa consegue criar concessionárias as quais conseguem armazenar os seguintes tipos de veículos: carros, motos e caminhões. Cada Concessionária possui um `nome`, `CNPJ` e número de veículos no `estoque`; Cada veículo possui `marca`, `preço`, número do `chassi` e ano de `fabricação`; apenas os carros possuem `tipo de motor` (gasolina ou elétrico); apenas as motos possuem  `modelo` (clássico ou esportivo); apenas os caminhões possuem `tipo de carga` (comum ou perigosa).
 

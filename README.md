@@ -12,7 +12,8 @@ O programa consegue criar concessionárias as quais conseguem armazenar os segui
 *      $ create-concessionaria <nome-concessionaria> <CNPJ> <estoque>
 *  exemplo:
 *      $ create-concessionaria IMD_SA 11.111.111/0001-11 0
-*  
+
+  
 * Para adicionar um carro:
 *      $ add-car <nome-concessionaria> <marca> <chassi> <preço> <ano_de_fabricação> <tipo_de_motor>
 *  exemplo:

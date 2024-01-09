@@ -8,10 +8,12 @@ O programa consegue criar concessionárias as quais conseguem armazenar os segui
 
 * O primeiro passo é compilar o programa com o comando "make" no terminal e , então, executar o comando "./build/programa", também no terminal.
 * A partir daí, é possível utilizar os seguintes comandos:
+  
 * Para criar uma concessionária:
 *      $ create-concessionaria <nome-concessionaria> <CNPJ> <estoque>
 *  exemplo:
 *      $ create-concessionaria IMD_SA 11.111.111/0001-11 0
+  
 * Para adicionar um carro:
 *      $ add-car <nome-concessionaria> <marca> <chassi> <preço> <ano_de_fabricação> <tipo_de_motor>
 *  exemplo:
